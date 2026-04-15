@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Drumset Machine</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #222222;
+      color: white;
+      text-align: center;
+      padding: 30px 20px;
+    }
+
+    h1 {
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: #dddddd;
+    }
+
+    .drum-container {
+      max-width: 1100px;
+      margin: 30px auto;
+    }
+
+    .drum-pad {
+      width: 180px;
+      display: inline-block;
+      vertical-align: top;
+      margin: 10px;
+      padding: 15px;
+      background-color: #333333;
+      border: 2px solid #555555;
+      border-radius: 12px;
+      cursor: pointer;
+    }
+
+    .drum-pad img {
+      width: 100%;
+      height: 180px;
+      object-fit: contain;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .drum-name {
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    #status {
+      margin-top: 20px;
+      font-size: 18px;
+      color: #ffcc66;
+    }
+  </style>
+</head>
+<body>
+  <h1>My Drum Machine</h1>
+  <p>Click the drum images to play sounds</p>
+
+  <div class="drum-container">
+    <div class="drum-pad" id="kick-pad">
+      <img src="images/kick.png" alt="Kick drum">
+      <div class="drum-name">Kick</div>
+    </div>
+
+    <div class="drum-pad" id="snare-pad">
+      <img src="images/snare.png" alt="Snare drum">
+      <div class="drum-name">Snare</div>
+    </div>
+
+    <div class="drum-pad" id="tom1-pad">
+      <img src="images/tom1.png" alt="Tom 1">
+      <div class="drum-name">Tom 1</div>
+    </div>
+
+    <div class="drum-pad" id="tom2-pad">
+      <img src="images/tom2.png" alt="Tom 2">
+      <div class="drum-name">Tom 2</div>
+    </div>
+
+    <div class="drum-pad" id="tom3-pad">
+      <img src="images/tom3.png" alt="Tom 3">
+      <div class="drum-name">Tom 3</div>
+    </div>
+
+    <div class="drum-pad" id="tom4-pad">
+      <img src="images/tom4.png" alt="Tom 4">
+      <div class="drum-name">Tom 4</div>
+    </div>
+
+    <div class="drum-pad" id="crash-pad">
+      <img src="images/crash.png" alt="Crash cymbal">
+      <div class="drum-name">Crash</div>
+    </div>
+  </div>
+
+  <p id="status">Waiting for click...</p>
+
+  <script>
+    let kickPad = document.querySelector("#kick-pad");
+    let snarePad = document.querySelector("#snare-pad");
+    let tom1Pad = document.querySelector("#tom1-pad");
+    let tom2Pad = document.querySelector("#tom2-pad");
+    let tom3Pad = document.querySelector("#tom3-pad");
+    let tom4Pad = document.querySelector("#tom4-pad");
+    let crashPad = document.querySelector("#crash-pad");
+    let statusText = document.querySelector("#status");
+
+    function playKick() {
+      let sound = new Audio("sounds/kick-bass.mp3");
+      sound.play();
+      statusText.textContent = "Playing: Kick";
+      document.body.style.backgroundColor = "#2c1f1f";
+    }
+
+    function playSnare() {
+      let sound = new Audio("sounds/snare.mp3");
+      sound.play();
+      statusText.textContent = "Playing: Snare";
+      document.body.style.backgroundColor = "#1f2c2c";
+    }
+
+    function playTom1() {
+      let sound = new Audio("sounds/tom-1.mp3");
+      sound.play();
+      statusText.textContent = "Playing: Tom 1";
+      document.body.style.backgroundColor = "#2c2c1f";
+    }
+
+    function playTom2() {
+      let sound = new Audio("sounds/tom-2.mp3");
+      sound.play();
+      statusText.textContent = "Playing: Tom 2";
+      document.body.style.backgroundColor = "#2b1f2c";
+    }
+
+    function playTom3() {
+      let sound = new Audio("sounds/tom-3.mp3");
+      sound.play();
+      statusText.textContent = "Playing: Tom 3";
+      document.body.style.backgroundColor = "#1f242c";
+    }
+
+    function playTom4() {
+      let sound = new Audio("sounds/tom-4.mp3");
+      sound.play();
+      statusText.textContent = "Playing: Tom 4";
+      document.body.style.backgroundColor = "#2c241f";
+    }
+
+    function playCrash() {
+      let sound = new Audio("sounds/crash.mp3");
+      sound.play();
+      statusText.textContent = "Playing: Crash";
+      document.body.style.backgroundColor = "#3a3220";
+    }
+
+    kickPad.addEventListener("click", playKick);
+    snarePad.addEventListener("click", playSnare);
+    tom1Pad.addEventListener("click", playTom1);
+    tom2Pad.addEventListener("click", playTom2);
+    tom3Pad.addEventListener("click", playTom3);
+    tom4Pad.addEventListener("click", playTom4);
+    crashPad.addEventListener("click", playCrash);
+  </script>
+</body>
+</html>
