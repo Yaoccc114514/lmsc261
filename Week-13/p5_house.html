@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simple Landscape</title>
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.11.3/lib/p5.min.js"></script>
+</head>
+<body>
+  <script>
+    function setup() {
+      createCanvas(400, 300);
+      noLoop();
+    }
+
+    function draw() {
+      background(40, 50, 90);
+
+      
+      fill(245, 245, 200);
+      noStroke();
+      circle(70, 70, 60);
+
+      
+      fill(70, 120, 70);
+      rect(0, 240, 400, 60);
+
+      
+      fill(210, 180, 140);
+      rect(150, 170, 100, 70);
+
+      
+      fill(120, 80, 60);
+      triangle(140, 170, 200, 120, 260, 170);
+
+      
+      fill(100, 70, 40);
+      rect(185, 200, 30, 40);
+    }
+  </script>
+</body>
+</html>
