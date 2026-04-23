@@ -3,40 +3,50 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Simple Landscape</title>
+  <title>moon house</title>
   <script src="https://cdn.jsdelivr.net/npm/p5@1.11.3/lib/p5.min.js"></script>
 </head>
 <body>
   <script>
-    function setup() {
-      createCanvas(400, 300);
-      noLoop();
-    }
+     function setup() {
+     createCanvas(400, 300);
+        }
 
-    function draw() {
-      background(40, 50, 90);
+      function draw() {
+            background(40, 50, 90);
+            drawMoon();
+            drawGround();
+            drawHousebody();
+            drawRoof();
+            drawDoor();
+        }
+        
+        function drawMoon() {
+          fill(245, 245, 200);
+          circle(80, 70, 60);
+        }
 
-      
-      fill(245, 245, 200);
-      noStroke();
-      circle(70, 70, 60);
 
-      
-      fill(70, 120, 70);
-      rect(0, 240, 400, 60);
+        function drawGround() {
+          fill(70, 120, 70);
+          rect(0, 240, 400, 60);
+        }
 
-      
-      fill(210, 180, 140);
-      rect(150, 170, 100, 70);
+        function drawHousebody() {
+          fill(210, 180, 140);
+          rect(150, 170, 100, 70);
+        }
 
-      
-      fill(120, 80, 60);
-      triangle(140, 170, 200, 120, 260, 170);
+        function drawRoof() {
+          fill(120, 80, 60);
+          triangle(140, 170, 200, 120, 260, 170);
+        }  
 
-      
-      fill(100, 70, 40);
-      rect(185, 200, 30, 40);
-    }
+        function drawDoor() {
+          fill(100, 70, 40);
+          rect(185, 200, 30, 40);
+        }
+
   </script>
 </body>
 </html>
